@@ -1,0 +1,2 @@
+# ChatAsimov
+chatGPT barato 
