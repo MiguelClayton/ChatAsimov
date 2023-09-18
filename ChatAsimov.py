@@ -8,14 +8,12 @@ import subprocess
 
 
 def enviar_mensagem():
-    mensagem = text_box.get("1.0", "end-1c")  # Obter texto da caixa de texto
+    mensagem = text_box.get("1.0", "end-1c")
     if mensagem:
-        # Adicionar a mensagem à caixa de texto de respostas
         response_box.config(state="normal")
         response_box.insert("end", f"Você: {mensagem}\n")
         response_box.config(state="disabled")
 
-        # Limpar a caixa de entrada
         text_box.delete("1.0", "end")
 
         input_text = text_box.get('1.0', tk.END)
@@ -28,7 +26,6 @@ def enviar_mensagem():
 
 
 def limpar_conversa():
-    # Limpar a caixa de texto de respostas
     response_box.config(state="normal")
     response_box.delete("1.0", "end")
     response_box.config(state="disabled")
@@ -69,21 +66,17 @@ text_box = tk.Text(janela, bg='#C0C0C0', height=5, width=30)
 text_box.grid(row=0, column=0, padx=10, pady=10)'''
 
 
-# Botão para enviar mensagem
 botao_enviar = tk.Button(janela, text='Enviar', command=enviar_mensagem)
 botao_enviar.pack(side='bottom', pady=10)
 
-# Botão para limpar a conversa
 botao_limpar = tk.Button(janela, text='Limpar Conversa', command=limpar_conversa)
 botao_limpar.pack(side='bottom', pady=10)
 
-# Caixa de texto para entrada de texto
 text_box = tk.Text(janela, bg='white', height=3)
 text_box.pack(side='bottom', fill='both', padx=10, pady=10)
 
-# Caixa de texto para exibição de mensagens
 response_box = tk.Text(janela, bg='white', height=15)
 response_box.pack(side='top', fill='both', expand=True, padx=10, pady=10)
-response_box.config(state="disabled")  # Impede a edição da caixa de texto de respostas
+response_box.config(state="disabled")
 
 janela.mainloop()
