@@ -52,7 +52,8 @@ if verifica not in os.environ:
 
 janela = tk.Tk()
 janela.title('Asimov')
-janela.geometry('400x500')
+#janela.geometry('400x500')
+janela.attributes('-fullscreen', True)
 janela.configure(background='#ECE5DD')
 
 
